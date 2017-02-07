@@ -29,7 +29,7 @@ This guide was last updated for Swift 3.0 on January 14th, 2017.
 
 ## 1. Code Formatting
 
-* **1.1** Use 4 spaces for tabs.
+* **1.1** Use 2 spaces for tabs.
 * **1.2** Avoid uncomfortably long lines with a hard maximum of 160 characters per line (Xcode->Preferences->Text Editing->Page guide at column: 160 is helpful for this)
 * **1.3** Ensure that there is a newline at the end of every file.
 * **1.4** Ensure that there is no trailing whitespace anywhere (Xcode->Preferences->Text Editing->Automatically trim trailing whitespace + Including whitespace-only lines).
@@ -37,17 +37,17 @@ This guide was last updated for Swift 3.0 on January 14th, 2017.
 
 ```swift
 class SomeClass {
-    func someMethod() {
-        if x == y {
-            /* ... */
-        } else if x == z {
-            /* ... */
-        } else {
-            /* ... */
-        }
+  func someMethod() {
+    if x == y {
+      /* ... */
+    } else if x == z {
+      /* ... */
+    } else {
+      /* ... */
     }
+  }
 
-    /* ... */
+  /* ... */
 }
 ```
 
@@ -59,13 +59,13 @@ let pirateViewController: PirateViewController
 
 // dictionary syntax (note that we left-align as opposed to aligning colons)
 let ninjaDictionary: [String: AnyObject] = [
-    "fightLikeDairyFarmer": false,
-    "disgusting": true
+  "fightLikeDairyFarmer": false,
+  "disgusting": true
 ]
 
 // declaring a function
 func myFunction<T, U: SomeProtocol>(firstArgument: U, secondArgument: T) where T.RelatedType == U {
-    /* ... */
+  /* ... */
 }
 
 // calling a function
@@ -73,12 +73,12 @@ someFunction(someArgument: "Kitten")
 
 // superclasses
 class PirateViewController: UIViewController {
-    /* ... */
+  /* ... */
 }
 
 // protocols
 extension PirateViewController: UITableViewDataSource {
-    /* ... */
+  /* ... */
 }
 ```
 
@@ -93,10 +93,10 @@ let myArray = [1, 2, 3, 4, 5]
 ```swift
 let myValue = 20 + (30 / 2) * 3
 if 1 + 1 == 3 {
-    fatalError("The universe is broken.")
+  fatalError("The universe is broken.")
 }
 func pancake(with syrup: Syrup) -> Pancake {
-    /* ... */
+  /* ... */
 }
 ```
 
@@ -107,16 +107,16 @@ func pancake(with syrup: Syrup) -> Pancake {
 func myFunctionWithManyParameters(parameterOne: String,
                                   parameterTwo: String,
                                   parameterThree: String) {
-    // Xcode indents to here for this kind of statement
-    print("\(parameterOne) \(parameterTwo) \(parameterThree)")
+  // Xcode indents to here for this kind of statement
+  print("\(parameterOne) \(parameterTwo) \(parameterThree)")
 }
 
 // Xcode indentation for a multi-line `if` statement
 if myFirstValue > (mySecondValue + myThirdValue)
     && myFourthValue == .someEnumValue {
 
-    // Xcode indents to here for this kind of statement
-    print("Hello, World!")
+  // Xcode indents to here for this kind of statement
+  print("Hello, World!")
 }
 ```
 
@@ -155,7 +155,7 @@ let firstCondition = x == firstReallyReallyLongPredicateFunction()
 let secondCondition = y == secondReallyReallyLongPredicateFunction()
 let thirdCondition = z == thirdReallyReallyLongPredicateFunction()
 if firstCondition && secondCondition && thirdCondition {
-    // do something
+  // do something
 }
 
 // NOT PREFERRED
@@ -183,7 +183,7 @@ let htmlBodyContent: String = "<p>Hello, World!</p>"
 let profileID: Int = 1
 // Prefer URLFinder to UrlFinder
 class URLFinder {
-    /* ... */
+  /* ... */
 }
 ```
 
@@ -191,23 +191,23 @@ class URLFinder {
 
 ```swift
 class MyClassName {
-    // PREFERRED
-    enum AccessibilityIdentifier {
-        static let pirateButton = "pirate_button"
-    }
-    enum SillyMathConstant {
-        static let indianaPi = 3
-    }
-    static let shared = MyClassName()
+  // PREFERRED
+  enum AccessibilityIdentifier {
+      static let pirateButton = "pirate_button"
+  }
+  enum SillyMathConstant {
+      static let indianaPi = 3
+  }
+  static let shared = MyClassName()
 
-    // NOT PREFERRED
-    static let kPirateButtonAccessibilityIdentifier = "pirate_button"
-    enum SillyMath {
-        static let indianaPi = 3
-    }
-    enum Singleton {
-        static let shared = MyClassName()
-    }
+  // NOT PREFERRED
+  static let kPirateButtonAccessibilityIdentifier = "pirate_button"
+  enum SillyMath {
+      static let indianaPi = 3
+  }
+  enum Singleton {
+      static let shared = MyClassName()
+  }
 }
 ```
 
@@ -217,10 +217,10 @@ class MyClassName {
 class SomeClass<T> { /* ... */ }
 class SomeClass<Model> { /* ... */ }
 protocol Modelable {
-    associatedtype Model
+  associatedtype Model
 }
 protocol Sequence {
-    associatedtype IteratorType: Iterator
+  associatedtype IteratorType: Iterator
 }
 ```
 
@@ -239,21 +239,20 @@ class CustomButton: UIButton { /* ... */ }
 ```swift
 // PREFERRED
 class RoundAnimatingButton: UIButton {
-    let animationDuration: NSTimeInterval
+  let animationDuration: NSTimeInterval
 
-    func startAnimating() {
-        let firstSubview = subviews.first
-    }
-
+  func startAnimating() {
+      let firstSubview = subviews.first
+  }
 }
 
 // NOT PREFERRED
 class RoundAnimating: UIButton {
-    let aniDur: NSTimeInterval
+  let aniDur: NSTimeInterval
 
-    func srtAnmating() {
-        let v = subviews.first
-    }
+  func srtAnmating() {
+      let v = subviews.first
+  }
 }
 ```
 
@@ -262,67 +261,66 @@ class RoundAnimating: UIButton {
 ```swift
 // PREFERRED
 class ConnectionTableViewCell: UITableViewCell {
-    let personImageView: UIImageView
+  let personImageView: UIImageView
 
-    let animationDuration: TimeInterval
+  let animationDuration: TimeInterval
 
-    // it is ok not to include string in the ivar name here because it's obvious
-    // that it's a string from the property name
-    let firstName: String
+  // it is ok not to include string in the ivar name here because it's obvious
+  // that it's a string from the property name
+  let firstName: String
 
-    // though not preferred, it is OK to use `Controller` instead of `ViewController`
-    let popupController: UIViewController
-    let popupViewController: UIViewController
+  // though not preferred, it is OK to use `Controller` instead of `ViewController`
+  let popupController: UIViewController
+  let popupViewController: UIViewController
 
-    // when working with a subclass of `UIViewController` such as a table view
-    // controller, collection view controller, split view controller, etc.,
-    // fully indicate the type in the name.
-    let popupTableViewController: UITableViewController
+  // when working with a subclass of `UIViewController` such as a table view
+  // controller, collection view controller, split view controller, etc.,
+  // fully indicate the type in the name.
+  let popupTableViewController: UITableViewController
 
-    // when working with outlets, make sure to specify the outlet type in the
-    // property name.
-    @IBOutlet weak var submitButton: UIButton!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var nameLabel: UILabel!
-
+  // when working with outlets, make sure to specify the outlet type in the
+  // property name.
+  @IBOutlet weak var submitButton: UIButton!
+  @IBOutlet weak var emailTextField: UITextField!
+  @IBOutlet weak var nameLabel: UILabel!
 }
 
 // NOT PREFERRED
 class ConnectionTableViewCell: UITableViewCell {
-    // this isn't a `UIImage`, so shouldn't be called image
-    // use personImageView instead
-    let personImage: UIImageView
+  // this isn't a `UIImage`, so shouldn't be called image
+  // use personImageView instead
+  let personImage: UIImageView
 
-    // this isn't a `String`, so it should be `textLabel`
-    let text: UILabel
+  // this isn't a `String`, so it should be `textLabel`
+  let text: UILabel
 
-    // `animation` is not clearly a time interval
-    // use `animationDuration` or `animationTimeInterval` instead
-    let animation: TimeInterval
+  // `animation` is not clearly a time interval
+  // use `animationDuration` or `animationTimeInterval` instead
+  let animation: TimeInterval
 
-    // this is not obviously a `String`
-    // use `transitionText` or `transitionString` instead
-    let transition: String
+  // this is not obviously a `String`
+  // use `transitionText` or `transitionString` instead
+  let transition: String
 
-    // this is a view controller - not a view
-    let popupView: UIViewController
+  // this is a view controller - not a view
+  let popupView: UIViewController
 
-    // as mentioned previously, we don't want to use abbreviations, so don't use
-    // `VC` instead of `ViewController`
-    let popupVC: UIViewController
+  // as mentioned previously, we don't want to use abbreviations, so don't use
+  // `VC` instead of `ViewController`
+  let popupVC: UIViewController
 
-    // even though this is still technically a `UIViewController`, this property
-    // should indicate that we are working with a *Table* View Controller
-    let popupViewController: UITableViewController
+  // even though this is still technically a `UIViewController`, this property
+  // should indicate that we are working with a *Table* View Controller
+  let popupViewController: UITableViewController
 
-    // for the sake of consistency, we should put the type name at the end of the
-    // property name and not at the start
-    @IBOutlet weak var btnSubmit: UIButton!
-    @IBOutlet weak var buttonSubmit: UIButton!
+  // for the sake of consistency, we should put the type name at the end of the
+  // property name and not at the start
+  @IBOutlet weak var btnSubmit: UIButton!
+  @IBOutlet weak var buttonSubmit: UIButton!
 
-    // we should always have a type in the property name when dealing with outlets
-    // for example, here, we should have `firstNameLabel` instead
-    @IBOutlet weak var firstName: UILabel!
+  // we should always have a type in the property name when dealing with outlets
+  // for example, here, we should have `firstNameLabel` instead
+  @IBOutlet weak var firstName: UILabel!
 }
 ```
 
@@ -333,24 +331,24 @@ class ConnectionTableViewCell: UITableViewCell {
 ```swift
 // here, the name is a noun that describes what the protocol does
 protocol TableViewSectionProvider {
-    func rowHeight(at row: Int) -> CGFloat
-    var numberOfRows: Int { get }
-    /* ... */
+  func rowHeight(at row: Int) -> CGFloat
+  var numberOfRows: Int { get }
+  /* ... */
 }
 
 // here, the protocol is a capability, and we name it appropriately
 protocol Loggable {
-    func logCurrentState()
-    /* ... */
+  func logCurrentState()
+  /* ... */
 }
 
 // suppose we have an `InputTextView` class, but we also want a protocol
 // to generalize some of the functionality - it might be appropriate to
 // use the `Protocol` suffix here
 protocol InputTextViewProtocol {
-    func sendTrackingEvent()
-    func inputText() -> String
-    /* ... */
+  func sendTrackingEvent()
+  func inputText() -> String
+  /* ... */
 }
 ```
 
@@ -370,7 +368,7 @@ let stringOfInts = [1, 2, 3].flatMap { String($0) }
 // NOT PREFERRED
 var stringOfInts: [String] = []
 for integer in [1, 2, 3] {
-    stringOfInts.append(String(integer))
+  stringOfInts.append(String(integer))
 }
 
 // PREFERRED
@@ -380,9 +378,9 @@ let evenNumbers = [4, 8, 15, 16, 23, 42].filter { $0 % 2 == 0 }
 // NOT PREFERRED
 var evenNumbers: [Int] = []
 for integer in [4, 8, 15, 16, 23, 42] {
-    if integer % 2 == 0 {
-        evenNumbers.append(integer)
-    }
+  if integer % 2 == 0 {
+    evenNumbers.append(integer)
+  }
 }
 ```
 
@@ -392,7 +390,7 @@ for integer in [4, 8, 15, 16, 23, 42] {
 
 ```swift
 func pirateName() -> (firstName: String, lastName: String) {
-    return ("Guybrush", "Threepwood")
+  return ("Guybrush", "Threepwood")
 }
 
 let name = pirateName()
@@ -406,17 +404,17 @@ let lastName = name.lastName
 
 ```swift
 myFunctionWithEscapingClosure() { [weak self] (error) -> Void in
-    // you can do this
+  // you can do this
 
-    self?.doSomething()
+  self?.doSomething()
 
-    // or you can do this
+  // or you can do this
 
-    guard let strongSelf = self else {
-        return
-    }
+  guard let strongSelf = self else {
+    return
+  }
 
-    strongSelf.doSomething()
+  strongSelf.doSomething()
 }
 ```
 
@@ -427,12 +425,12 @@ myFunctionWithEscapingClosure() { [weak self] (error) -> Void in
 ```swift
 // PREFERRED
 if x == y {
-    /* ... */
+  /* ... */
 }
 
 // NOT PREFERRED
 if (x == y) {
-    /* ... */
+  /* ... */
 }
 ```
 
@@ -464,15 +462,15 @@ imageView.backgroundColor = .white
 
 ```swift
 if someBoolean {
-    // do something
+  // do something
 } else {
-    // do something else
+  // do something else
 }
 
 do {
-    let fileContents = try readFile("filename.txt")
+  let fileContents = try readFile("filename.txt")
 } catch {
-    print(error)
+  print(error)
 }
 ```
 
@@ -499,13 +497,13 @@ static private let myPrivateNumber: Int
 ```swift
 // PREFERRED
 open class Pirate {
-    /* ... */
+  /* ... */
 }
 
 // NOT PREFERRED
 open
 class Pirate {
-    /* ... */
+  /* ... */
 }
 ```
 
@@ -545,20 +543,20 @@ You can override existing operators to support new types (especially `==`). Howe
 
 ```swift
 enum Problem {
-    case attitude
-    case hair
-    case hunger(hungerLevel: Int)
+  case attitude
+  case hair
+  case hunger(hungerLevel: Int)
 }
 
 func handleProblem(problem: Problem) {
-    switch problem {
-    case .attitude:
-        print("At least I don't have a hair problem.")
-    case .hair:
-        print("Your barber didn't know when to stop.")
-    case .hunger(let hungerLevel):
-        print("The hunger level is \(hungerLevel).")
-    }
+  switch problem {
+  case .attitude:
+    print("At least I don't have a hair problem.")
+  case .hair:
+    print("Your barber didn't know when to stop.")
+  case .hunger(let hungerLevel):
+    print("The hunger level is \(hungerLevel).")
+  }
 }
 ```
 
@@ -568,12 +566,12 @@ func handleProblem(problem: Problem) {
 
 ```swift
 func handleDigit(_ digit: Int) throws {
-    switch digit {
-    case 0, 1, 2, 3, 4, 5, 6, 7, 8, 9:
-        print("Yes, \(digit) is a digit!")
-    default:
-        throw Error(message: "The given number was not a digit.")
-    }
+  switch digit {
+  case 0, 1, 2, 3, 4, 5, 6, 7, 8, 9:
+    print("Yes, \(digit) is a digit!")
+  default:
+    throw Error(message: "The given number was not a digit.")
+  }
 }
 ```
 
@@ -588,12 +586,12 @@ func handleDigit(_ digit: Int) throws {
 ```swift
 // PREFERERED
 if someOptional != nil {
-    // do something
+  // do something
 }
 
 // NOT PREFERRED
 if let _ = someOptional {
-    // do something
+  // do something
 }
 ```
 
@@ -612,7 +610,7 @@ unowned var parentViewController: UIViewController
 
 ```swift
 guard let myValue = myValue else {
-    return
+  return
 }
 ```
 
@@ -633,10 +631,10 @@ Even when using method #2, add `// MARK:` statements anyway for easier readabili
 
 ```swift
 var computedProperty: String {
-    if someBool {
-        return "I'm a mighty pirate!"
-    }
-    return "I'm selling these fine leather jackets."
+  if someBool {
+    return "I'm a mighty pirate!"
+  }
+  return "I'm selling these fine leather jackets."
 }
 ```
 
@@ -645,24 +643,24 @@ var computedProperty: String {
 
 ```swift
 var storedProperty: String = "I'm selling these fine leather jackets." {
-    willSet {
-        print("will set to \(newValue)")
-    }
-    didSet {
-        print("did set from \(oldValue) to \(storedProperty)")
-    }
+  willSet {
+    print("will set to \(newValue)")
+  }
+  didSet {
+    print("did set from \(oldValue) to \(storedProperty)")
+  }
 }
 
 var computedProperty: String  {
-    get {
-        if someBool {
-            return "I'm a mighty pirate!"
-        }
-        return storedProperty
+  get {
+    if someBool {
+      return "I'm a mighty pirate!"
     }
-    set {
-        storedProperty = newValue
-    }
+    return storedProperty
+  }
+  set {
+    storedProperty = newValue
+  }
 }
 ```
 
@@ -670,9 +668,9 @@ var computedProperty: String  {
 
 ```swift
 class PirateManager {
-    static let shared = PirateManager()
+  static let shared = PirateManager()
 
-    /* ... */
+  /* ... */
 }
 ```
 
@@ -683,12 +681,12 @@ class PirateManager {
 ```swift
 // omitting the type
 doSomethingWithClosure() { response in
-    print(response)
+  print(response)
 }
 
 // explicit type
 doSomethingWithClosure() { response: NSURLResponse in
-    print(response)
+  print(response)
 }
 
 // using shorthand in a map statement
@@ -699,11 +697,11 @@ doSomethingWithClosure() { response: NSURLResponse in
 
 ```swift
 let completionBlock: (Bool) -> Void = { (success) in
-    print("Success? \(success)")
+  print("Success? \(success)")
 }
 
 let completionBlock: () -> Void = {
-    print("Completed!")
+  print("Completed!")
 }
 
 let completionBlock: (() -> Void)? = nil
@@ -716,14 +714,14 @@ let completionBlock: (() -> Void)? = nil
 ```swift
 // trailing closure
 doSomething(1.0) { (parameter1) in
-    print("Parameter 1 is \(parameter1)")
+  print("Parameter 1 is \(parameter1)")
 }
 
 // no trailing closure
 doSomething(1.0, success: { (parameter1) in
-    print("Success with \(parameter1)")
+  print("Success with \(parameter1)")
 }, failure: { (parameter1) in
-    print("Failure with \(parameter1)")
+  print("Failure with \(parameter1)")
 })
 ```
 
@@ -741,22 +739,22 @@ Example:
 
 ```swift
 func readFile(named filename: String) -> String? {
-    guard let file = openFile(named: filename) else {
-        return nil
-    }
+  guard let file = openFile(named: filename) else {
+    return nil
+  }
 
-    let fileContents = file.read()
-    file.close()
-    return fileContents
+  let fileContents = file.read()
+  file.close()
+  return fileContents
 }
 
 func printSomeFile() {
-    let filename = "somefile.txt"
-    guard let fileContents = readFile(named: filename) else {
-        print("Unable to open file \(filename).")
-        return
-    }
-    print(fileContents)
+  let filename = "somefile.txt"
+  guard let fileContents = readFile(named: filename) else {
+    print("Unable to open file \(filename).")
+    return
+  }
+  print(fileContents)
 }
 ```
 
@@ -766,17 +764,17 @@ You can use a `struct` such as the following:
 
 ```swift
 struct Error: Swift.Error {
-    public let file: StaticString
-    public let function: StaticString
-    public let line: UInt
-    public let message: String
+  public let file: StaticString
+  public let function: StaticString
+  public let line: UInt
+  public let message: String
 
-    public init(message: String, file: StaticString = #file, function: StaticString = #function, line: UInt = #line) {
-        self.file = file
-        self.function = function
-        self.line = line
-        self.message = message
-    }
+  public init(message: String, file: StaticString = #file, function: StaticString = #function, line: UInt = #line) {
+    self.file = file
+    self.function = function
+    self.line = line
+    self.message = message
+  }
 }
 ```
 
@@ -784,22 +782,22 @@ Example usage:
 
 ```swift
 func readFile(named filename: String) throws -> String {
-    guard let file = openFile(named: filename) else {
-        throw Error(message: "Unable to open file named \(filename).")
-    }
+  guard let file = openFile(named: filename) else {
+    throw Error(message: "Unable to open file named \(filename).")
+  }
 
-    let fileContents = file.read()
-    file.close()
-    return fileContents
+  let fileContents = file.read()
+  file.close()
+  return fileContents
 }
 
 func printSomeFile() {
-    do {
-        let fileContents = try readFile(named: filename)
-        print(fileContents)
-    } catch {
-        print(error)
-    }
+  do {
+    let fileContents = try readFile(named: filename)
+    print(fileContents)
+  } catch {
+    print(error)
+  }
 }
 ```
 
@@ -814,21 +812,21 @@ In general, if a method can "fail", and the reason for the failure is not immedi
 ```swift
 // PREFERRED
 func eatDoughnut(at index: Int) {
-    guard index >= 0 && index < doughnuts.count else {
-        // return early because the index is out of bounds
-        return
-    }
+  guard index >= 0 && index < doughnuts.count else {
+    // return early because the index is out of bounds
+    return
+  }
 
-    let doughnut = doughnuts[index]
-    eat(doughnut)
+  let doughnut = doughnuts[index]
+  eat(doughnut)
 }
 
 // NOT PREFERRED
 func eatDoughnut(at index: Int) {
-    if index >= 0 && index < doughnuts.count {
-        let doughnut = doughnuts[index]
-        eat(doughnut)
-    }
+  if index >= 0 && index < doughnuts.count {
+    let doughnut = doughnuts[index]
+    eat(doughnut)
+  }
 }
 ```
 
@@ -837,20 +835,20 @@ func eatDoughnut(at index: Int) {
 ```swift
 // PREFERRED
 guard let monkeyIsland = monkeyIsland else {
-    return
+  return
 }
 bookVacation(on: monkeyIsland)
 bragAboutVacation(at: monkeyIsland)
 
 // NOT PREFERRED
 if let monkeyIsland = monkeyIsland {
-    bookVacation(on: monkeyIsland)
-    bragAboutVacation(at: monkeyIsland)
+  bookVacation(on: monkeyIsland)
+  bragAboutVacation(at: monkeyIsland)
 }
 
 // EVEN LESS PREFERRED
 if monkeyIsland == nil {
-    return
+  return
 }
 bookVacation(on: monkeyIsland!)
 bragAboutVacation(at: monkeyIsland!)
@@ -861,17 +859,17 @@ bragAboutVacation(at: monkeyIsland!)
 ```swift
 // an `if` statement is readable here
 if operationFailed {
-    return
+  return
 }
 
 // a `guard` statement is readable here
 guard isSuccessful else {
-    return
+  return
 }
 
 // double negative logic like this can get hard to read - i.e. don't do this
 guard !operationFailed else {
-    return
+  return
 }
 ```
 
@@ -880,15 +878,15 @@ guard !operationFailed else {
 ```swift
 // PREFERRED
 if isFriendly {
-    print("Hello, nice to meet you!")
+  print("Hello, nice to meet you!")
 } else {
-    print("You have the manners of a beggar.")
+  print("You have the manners of a beggar.")
 }
 
 // NOT PREFERRED
 guard isFriendly else {
-    print("You have the manners of a beggar.")
-    return
+  print("You have the manners of a beggar.")
+  return
 }
 
 print("Hello, nice to meet you!")
@@ -898,11 +896,11 @@ print("Hello, nice to meet you!")
 
 ```swift
 if let monkeyIsland = monkeyIsland {
-    bookVacation(onIsland: monkeyIsland)
+  bookVacation(onIsland: monkeyIsland)
 }
 
 if let woodchuck = woodchuck, canChuckWood(woodchuck) {
-    woodchuck.chuckWood()
+  woodchuck.chuckWood()
 }
 ```
 
@@ -911,22 +909,22 @@ if let woodchuck = woodchuck, canChuckWood(woodchuck) {
 ```swift
 // combined because we just return
 guard let thingOne = thingOne,
-    let thingTwo = thingTwo,
-    let thingThree = thingThree else {
-    return
+  let thingTwo = thingTwo,
+  let thingThree = thingThree else {
+  return
 }
 
 // separate statements because we handle a specific error in each case
 guard let thingOne = thingOne else {
-    throw Error(message: "Unwrapping thingOne failed.")
+  throw Error(message: "Unwrapping thingOne failed.")
 }
 
 guard let thingTwo = thingTwo else {
-    throw Error(message: "Unwrapping thingTwo failed.")
+  throw Error(message: "Unwrapping thingTwo failed.")
 }
 
 guard let thingThree = thingThree else {
-    throw Error(message: "Unwrapping thingThree failed.")
+  throw Error(message: "Unwrapping thingThree failed.")
 }
 ```
 
@@ -936,7 +934,7 @@ guard let thingThree = thingThree else {
 ```swift
 // PREFERRED
 guard let thingOne = thingOne else {
-    return
+  return
 }
 
 // NOT PREFERRED
@@ -994,7 +992,7 @@ Guidelines:
  3. Thing three
  */
 class MyAwesomeClass {
-    /* ... */
+  /* ... */
 }
 ```
 
@@ -1006,7 +1004,7 @@ class MyAwesomeClass {
  - warning: Make sure that `someValue` is `true` before running this function.
  */
 func myFunction() {
-    /* ... */
+  /* ... */
 }
 ```
 
@@ -1021,15 +1019,15 @@ func myFunction() {
 ```swift
 class Pirate {
 
-    // MARK: - instance properties
+  // MARK: - instance properties
 
-    private let pirateName: String
+  private let pirateName: String
 
-    // MARK: - initialization
+  // MARK: - initialization
 
-    init() {
-        /* ... */
-    }
+  init() {
+    /* ... */
+  }
 
 }
 ```
