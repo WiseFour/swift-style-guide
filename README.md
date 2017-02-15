@@ -124,27 +124,27 @@ if myFirstValue > (mySecondValue + myThirdValue)
 
 ```swift
 someFunctionWithManyArguments(
-    firstArgument: "Hello, I am a string",
-    secondArgument: resultFromSomeFunction(),
-    thirdArgument: someOtherLocalProperty)
+  firstArgument: "Hello, I am a string",
+  secondArgument: resultFromSomeFunction(),
+  thirdArgument: someOtherLocalProperty)
 ```
 
 * **1.11** When dealing with an implicit array or dictionary large enough to warrant splitting it into multiple lines, treat the `[` and `]` as if they were braces in a method, `if` statement, etc. Closures in a method should be treated similarly.
 
 ```swift
 someFunctionWithABunchOfArguments(
-    someStringArgument: "hello I am a string",
-    someArrayArgument: [
-        "dadada daaaa daaaa dadada daaaa daaaa dadada daaaa daaaa",
-        "string one is crazy - what is it thinking?"
-    ],
-    someDictionaryArgument: [
-        "dictionary key 1": "some value 1, but also some more text here",
-        "dictionary key 2": "some value 2"
-    ],
-    someClosure: { parameter1 in
-        print(parameter1)
-    })
+  someStringArgument: "hello I am a string",
+  someArrayArgument: [
+    "dadada daaaa daaaa dadada daaaa daaaa dadada daaaa daaaa",
+    "string one is crazy - what is it thinking?"
+  ],
+  someDictionaryArgument: [
+    "dictionary key 1": "some value 1, but also some more text here",
+    "dictionary key 2": "some value 2"
+  ],
+  someClosure: { parameter1 in
+    print(parameter1)
+  })
 ```
 
 * **1.12** Prefer using local constants or other mitigation techniques to avoid multi-line predicates where possible.
@@ -193,20 +193,20 @@ class URLFinder {
 class MyClassName {
   // PREFERRED
   enum AccessibilityIdentifier {
-      static let pirateButton = "pirate_button"
+    static let pirateButton = "pirate_button"
   }
   enum SillyMathConstant {
-      static let indianaPi = 3
+    static let indianaPi = 3
   }
   static let shared = MyClassName()
 
   // NOT PREFERRED
   static let kPirateButtonAccessibilityIdentifier = "pirate_button"
   enum SillyMath {
-      static let indianaPi = 3
+    static let indianaPi = 3
   }
   enum Singleton {
-      static let shared = MyClassName()
+    static let shared = MyClassName()
   }
 }
 ```
@@ -242,7 +242,7 @@ class RoundAnimatingButton: UIButton {
   let animationDuration: NSTimeInterval
 
   func startAnimating() {
-      let firstSubview = subviews.first
+    let firstSubview = subviews.first
   }
 }
 
@@ -251,7 +251,7 @@ class RoundAnimating: UIButton {
   let aniDur: NSTimeInterval
 
   func srtAnmating() {
-      let v = subviews.first
+    let v = subviews.first
   }
 }
 ```
