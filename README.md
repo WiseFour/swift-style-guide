@@ -909,8 +909,8 @@ if let woodchuck = woodchuck, canChuckWood(woodchuck) {
 ```swift
 // combined because we just return
 guard let thingOne = thingOne,
-  let thingTwo = thingTwo,
-  let thingThree = thingThree else {
+    let thingTwo = thingTwo,
+    let thingThree = thingThree else {
   return
 }
 
